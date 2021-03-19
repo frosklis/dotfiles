@@ -101,6 +101,13 @@ alias vim="nvim"
 # git aliases
 alias glt='git log --oneline --decorate --graph --all'
 alias glta='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
+
+# Set up fzf to use ripgrep as default https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/claudio/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -116,12 +123,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Para hledger
-export HLEDGER_UI_EDITOR=vim
-export EDITOR=vim
-# export LEDGER_FILE="/Users/claudio/Google Drive/Documentos/finanzas/master.ledger"
-
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
@@ -132,3 +133,13 @@ export PATH="/usr/local/opt/mozjpeg/bin:$PATH"
 export PATH="$PATH:${HOME}/dev/flutter/bin"
 export PATH="$PATH:${HOME}/.cargo/bin"
 export CLICOLOR_FORCE=1
+export CLASSPATH=".:/usr/local/lib/antlr-4.9.1-complete.jar:$CLASSPATH"
+export RUST_BACKTRACE=1
+export GPG_TTY=$(tty)
+export EDITOR=nvim
+alias antlr4='java -jar /usr/local/lib/antlr-4.9.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/ruby/lib"
+# export CPPFLAGS="-I/usr/local/opt/ruby/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"

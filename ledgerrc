@@ -6,6 +6,6 @@
 --effective
 # --pedantic
 --strict
---file /Users/claudio/Google Drive/Documentos/finanzas/master.ledger
+--file /Users/claudio/Dropbox/Documentos/dinero/data/master.ledger
 --unrealized-gains Patrimonio neto:Ganancias latentes
 --unrealized-losses Patrimonio neto:Pérdidas latentes
